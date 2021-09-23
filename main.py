@@ -1,11 +1,5 @@
 from art import logo
 import random
-############### Blackjack Project #####################
-
-#Difficulty Normal 😎: Use all Hints below to complete the project.
-#Difficulty Hard 🤔: Use only Hints 1, 2, 3 to complete the project.
-#Difficulty Extra Hard 😭: Only use Hints 1 & 2 to complete the project.
-#Difficulty Expert 🤯: Only use Hint 1 to complete the project.
 
 ############### Our Blackjack House Rules #####################
 
@@ -19,11 +13,13 @@ import random
 ## Cards are not removed from the deck as they are drawn.
 ## The computer is the dealer.
 
+#functions
 def deal_card():
   """Returns random card from the deck"""
   cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
   card = random.choice(cards)
   return card
+
 
 def calculate_score(cards):
   """Take a list of cards and return the score calculated from the cards"""
@@ -36,23 +32,21 @@ def calculate_score(cards):
   return sum(cards)
 
 
-
-#Hint 5: Deal the user and computer 2 cards each using deal_card() and append().
 user_cards = []
 computer_cards = []
 is_game_over = False
 
+#card dealer
 for _ in range(2):
   user_cards.append(deal_card())
   computer_cards.append(deal_card())
 
-
-
-#Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21, then the game ends.
 user_score = calculate_score(user_cards)
 computer_score = calculate_score(computer_cards)
+
 print(f"Your cards: {user_cards}, current score: {user_score}")
-print(f"Your cards: {computer_cards}, current score: {computer_score}")
+print(f"Computer cards: {computer_cards}, current score: {computer_score}")
+
 if user_score == 0 or computer_score == 0:
   is_game_over = True
   print("Game over")
