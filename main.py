@@ -53,9 +53,21 @@ if user_score == 0 or computer_score == 0:
 
 #Hint 10: If the game has not ended, ask the user if they want to draw another card. If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
 
-#Hint 11: The score will need to be rechecked with every new card drawn and the checks in Hint 9 need to be repeated until the game ends.
+while is_game_over == False:
+  hit = input("Do you want to draw another card? Type 'y' or 'n'.")
+  if hit == "n":
+    is_game_over = False
+    user_cards.append(deal_card())
+    user_score = calculate_score(user_cards)
+    print(f"Your cards: {user_cards}, current score: {user_score}")
+    print(f"Computer cards: {computer_cards}, current score: {computer_score}")
+  if hit == "n":
+    is_game_over == True
+    print("Game over")
 
 #Hint 12: Once the user is done, it's time to let the computer play. The computer should keep drawing cards as long as it has a score less than 17.
+
+
 
 #Hint 13: Create a function called compare() and pass in the user_score and computer_score. If the computer and user both have the same score, then it's a draw. If the computer has a blackjack (0), then the user loses. If the user has a blackjack (0), then the user wins. If the user_score is over 21, then the user loses. If the computer_score is over 21, then the computer loses. If none of the above, then the player with the highest score wins.
 
