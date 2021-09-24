@@ -55,7 +55,7 @@ if user_score == 0 or computer_score == 0:
 
 while is_game_over == False:
   hit = input("Do you want to draw another card? Type 'y' or 'n'.")
-  if hit == "n":
+  if hit == "y":
     is_game_over = False
     user_cards.append(deal_card())
     user_score = calculate_score(user_cards)
